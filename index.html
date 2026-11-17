@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Social Arcade</title>
+    <!-- Google Fonts para a Estética Arcade & Sci-Fi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Seção de Autenticação (Login / Cadastro) -->
+    <section id="auth-section" class="arcade-panel auth-container">
+        <h1>🕹️ Arcade Space 🕹️</h1>
+        
+        <!-- Formulário de Login -->
+        <div id="box-login" class="auth-box">
+            <h3>PLAYER LOGIN</h3>
+            <form id="form-login">
+                <input type="text" id="login-email" placeholder="Seu Login ou E-mail" required>
+                <input type="password" id="login-senha" placeholder="Sua Senha" required>
+                <button type="submit" class="btn-full">START GAME</button>
+            </form>
+        </div>
+
+        <div class="arcade-divider"></div>
+
+        <!-- Formulário de Cadastro -->
+        <div id="box-cadastro">
+            <h3>NOVO JOGADOR</h3>
+            <form id="cadastro">
+                <input type="text" id="nome" placeholder="Nome do Jogador" required>
+                <input type="text" id="login" placeholder="Escolha um Login" required>
+                <input type="password" id="senha" placeholder="Escolha uma Senha" required>
+                <button type="submit" class="btn-full btn-register">INSERT COIN (CADASTRAR)</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Seção Principal da Rede Social (Logado) -->
+    <section id="feed-section" class="app-container" style="display: none;">
+        <div class="feed-top-bar">
+            <h2 id="user-welcome">PLAYER 1</h2>
+            <button id="btn-logout">LOGOUT</button>
+        </div>
+
+        <!-- Menu de Navegação Arcade -->
+        <div id="arcade-nav-menu" class="arcade-nav">
+            <button id="nav-feed" class="arcade-tab-btn active">🌐 Feed Principal</button>
+            <button id="nav-perfil" class="arcade-tab-btn">👤 Meu Perfil</button>
+        </div>
+
+        <!-- CONTEÚDO 1: FEED PRINCIPAL -->
+        <div id="feed-container-principal">
+            <div class="post-box arcade-panel">
+                <h3>NOVA PUBLICAÇÃO</h3>
+                <textarea id="conteudo-post" placeholder="O que está acontecendo no fliperama? (Use hashtags como #StreetFighter)"></textarea>
+                <input type="text" id="input-img-post" placeholder="Link de imagem ou clipe de gameplay (Opcional)">
+                <button id="btn-publicar">PUBLICAR</button>
+            </div>
+            
+            <div id="timeline">
+                <!-- Posts injetados via JS -->
+            </div>
+        </div>
+
+        <!-- CONTEÚDO 2: SEÇÃO DE PERFIL -->
+        <div id="profile-section" style="display: none;" class="arcade-panel">
+            <div class="profile-header">
+                <img id="profile-avatar" src="https://via.placeholder.com/100" alt="Avatar do Player" class="profile-avatar-img">
+                <div class="profile-info">
+                    <h2 id="profile-name">PLAYER NAME</h2>
+                    <button id="btn-mudar-foto">Mudar Foto de Perfil</button>
+                </div>
+            </div>
+
+            <!-- Abas Internas do Perfil -->
+            <div class="profile-tabs">
+                <button class="tab-perfil active" data-tab="meus-posts">Meus Posts</button>
+                <button class="tab-perfil" data-tab="curtidos">Posts Curtidos ❤️</button>
+                <button class="tab-perfil" data-tab="topicos">Tópicos Seguidos 🎮</button>
+            </div>
+
+            <!-- Conteúdo dinâmico das abas de perfil -->
+            <div id="profile-content-area">
+                <!-- Injetado via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE EDIÇÃO -->
+    <div id="modal-edicao" class="modal-overlay" style="display: none;">
+        <div class="arcade-panel modal-box">
+            <h3 id="modal-titulo">EDITAR ITEM</h3>
+            <form id="form-edicao-modal">
+                <textarea id="modal-input-texto" class="modal-textarea" required></textarea>
+                <div class="modal-actions">
+                    <button type="submit" class="flex-1">SALVAR</button>
+                    <button type="button" id="modal-btn-cancelar" class="flex-1 btn-cancel">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/mainpage/mainpage.js"></script>
+</body>
+</html>
